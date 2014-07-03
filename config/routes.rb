@@ -3,6 +3,8 @@ Kudos::Application.routes.draw do
 
   resources :organizations
 
+  root :to => 'organizations#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

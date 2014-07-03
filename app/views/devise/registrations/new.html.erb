@@ -7,11 +7,16 @@
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true %>
     <%= f.input :password_confirmation, required: true %>
+    <%= f.association :organization, required: true %>
+
+    Optional
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, 'Sign up' %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render 'devise/shared/links' %>
