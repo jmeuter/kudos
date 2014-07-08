@@ -15,7 +15,7 @@
 
     <div class="parent_info">
       <div class="arrow"><i class="fa fa-arrow-circle-down"></i></div>
-      <div class="user_actions_title">Give Kudos</div>
+      <div class="user_actions_title">Give Kudos ~ You have </div>
     </div>
 
     <div class="child_wrapper" style="float:right;height:100%;">
@@ -23,21 +23,29 @@
 
         <table id="" class="display">
           <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th></th>
-          </tr>
+          <% unless @users.empty? %>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th></th>
+            </tr>
+          <% end %>
           </thead>
           <tbody>
-          <% @users.each do |user| %>
+          <% if @users.empty? %>
             <tr>
-              <td><%= user.first_name %></td>
-              <td><%= user.last_name %></td>
-              <td><%= user.email %></td>
-              <td>Give Kudos?</td>
+              <td colspan="4">You are currently the only user assigned to <%= @user.organization.name %></td>
             </tr>
+          <% else %>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= user.first_name %></td>
+                <td><%= user.last_name %></td>
+                <td><%= user.email %></td>
+                <td>Give Kudos?</td>
+              </tr>
+            <% end %>
           <% end %>
           </tbody>
         </table>
