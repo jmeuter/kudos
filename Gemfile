@@ -9,7 +9,7 @@ gem 'jquery-ui-rails'
 gem 'simple_form'
 gem 'logging'
 gem 'thin'
-gem 'whenever' # trying this one out for the cron task needed
+gem 'whenever' # trying this one out for the cron task needed (https://github.com/javan/whenever)
 
 group :assets do
   gem 'sass'

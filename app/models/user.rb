@@ -46,13 +46,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  def give_kudos(kudos_user)
-    begin
-      #
-
-    rescue Exception => e
-      Log.error("Kudos giving failed with: #{e.message}")
-    end
-  end
-
 end
