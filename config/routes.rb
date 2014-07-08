@@ -1,9 +1,16 @@
 Kudos::Application.routes.draw do
   devise_for :users
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+
+  resources :users
 
   resources :organizations
 
-  root :to => 'organizations#index'
+  authenticated :user do
+    root to: 'users#show'
+  end
+
+  root to: 'users#show'
 
 
   # The priority is based upon order of creation:

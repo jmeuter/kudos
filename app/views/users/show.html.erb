@@ -1,0 +1,96 @@
+<% content_for :title, 'Users' %>
+<% content_for :subtitle, @organization.name %>
+
+
+<div class="row user_info">
+  <div class="user_title">
+    <%= @user.fullname %> ~ <%= @user.email %>
+  </div>
+
+</div>
+
+<div id="users_wrapper">
+
+  <div class="row parent_wrapper users_content_wrapper">
+
+    <div class="parent_info">
+      <div class="arrow"><i class="fa fa-arrow-circle-down"></i></div>
+      <div class="user_actions_title">Give Kudos</div>
+    </div>
+
+    <div class="child_wrapper" style="float:right;height:100%;">
+      <div class="asset_file_events" style="border-collapse:collapse;">
+
+        <table id="" class="display">
+          <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.first_name %></td>
+              <td><%= user.last_name %></td>
+              <td><%= user.email %></td>
+              <td>Give Kudos?</td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row parent_wrapper users_content_wrapper">
+
+    <div class="parent_info">
+      <div class="arrow"><i class="fa fa-arrow-circle-down"></i></div>
+      <div class="user_actions_title">Received Kudos</div>
+    </div>
+
+    <div class="child_wrapper" style="float:right;height:100%;">
+      <div class="asset_file_events" style="border-collapse:collapse;">
+
+        <table id="" class="display" style="width: 90%;">
+          <% unless @kudos.empty? %>
+            <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Kudos Honor</th>
+              <th>Received</th>
+            </tr>
+            </thead>
+          <% end %>
+          <tbody>
+          <% if @kudos.empty? %>
+            <tr>
+              <td colspan="4">You have not received any kudos</td>
+            </tr>
+          <% else %>
+            <% @kudos.each do |kudo| %>
+              <tr>
+                <td><%= kudo.primary_user.first_name %></td>
+                <td><%= kudo.primary_user.last_name %></td>
+                <td><%= kudo.primary_user.email %></td>
+                <td><%= kudo.honor %></td>
+                <td><%= kudo.updated_at.to_formatted_s(:long) %></td>
+              </tr>
+            <% end %>
+          <% end %>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

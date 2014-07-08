@@ -1,0 +1,5 @@
+@mixin radius($dist) {
+  -webkit-border-radius: $dist + px;
+  -moz-border-radius: $dist + px;
+  border-radius: $dist + px;
+}

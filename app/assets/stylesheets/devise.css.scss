@@ -1,0 +1,93 @@
+.login_wrapper {
+  margin: 0px;
+//  float: right;
+  height: 30px;
+  padding: 8px;
+
+  a {
+    padding: 5px 10px 5px 10px;
+    height: 25px;
+    border-left: 1px #ccc solid;
+    color: #ccc;
+    text-decoration: none;
+    font-size: .80em;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:active {
+      color: #fff;
+      text-shadow: 0 0 1px #fff, 0 0 8px #fff;
+    }
+  }
+}
+
+ody.sessions.new {
+  .position {
+
+    div.welcome_message {
+      text-align:center;
+    }
+    div.form_wrapper {
+      width: 730px;
+    }
+
+    .onecol_login {
+      width:4%;
+      float:left;
+
+      .btn {
+        margin:30px 0 0 32px;
+
+        input {
+          margin-top:20px;
+        }
+      }
+    }
+
+    margin-top:70px;
+
+    .box {
+      border-radius:2px 5px 5px 2px;
+      margin-left:97px;
+      height:89px;
+      border:solid 1px #ccc;
+    }
+
+    form {
+      margin-left:auto;
+      margin-right:auto;
+      width:690px;
+    }
+  }
+  .usr_psw_row {
+    margin:10px 0 0 0px;
+    padding-right: 38px;
+
+    div {
+      margin-bottom:-8px;
+      text-align:right;
+    }
+
+    input {
+      width: 300px;
+    }
+  }
+
+  .nav_global, .onecol {
+    display:none;
+  }
+
+  .login_frame {
+    border:#c7c7c7 1px solid;
+  }
+
+  #login_error {
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: red;
+    margin: 30px 0 -30px 0;
+  }
+}

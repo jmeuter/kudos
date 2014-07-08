@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kudos</title>
+  <title><%= content_for?(:title) ? content_for(:title) : 'Kudos' %></title>
   <%= stylesheet_link_tag    'application', :media => 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div id="wrapper" class="row">
+  <!-- logo -->
+  <div class="onecol">
+    <div class="logo_HD logo_BG_orange">
+      <%= link_to image_tag('img_logo_bg.png') %>
+    </div>
+  </div>
 
-<%= yield %>
+  <!-- global nav, logout, identity header -->
+  <div class="nav_global fifteencol last">
+    <div class="nav_wrapper">
+      <%= render 'layouts/navigation' %>
+    </div>
+    <div class="login_wrapper">
+      <%= render 'layouts/login' %>
+    </div>
+
+    <%#= render 'fortknox/layouts/messages' %>
+
+    <div class="tencol">
+      <div class="page_title"><%= content_for?(:title) ? content_for(:title) : '' %></div>
+      <div class="page_title_sub"><%= content_for?(:subtitle) ? content_for(:subtitle) : '' %></div>
+    </div>
+
+    <div class="fivecol last btn_new_position">
+      <%= content_for?(:header_buttons) ? yield(:header_buttons) : '' %>
+    </div>
+  </div>
+
+  <div class="yields">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+  </div>
+
+
+</div>
 
 </body>
 </html>

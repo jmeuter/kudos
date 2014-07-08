@@ -8,3 +8,9 @@
 
 # primary organization for the demo
 org = Organization.create(name: 'Kudos, Inc.')
+user = User.create(first_name: 'John', last_name: 'Doe', email: 'johndoe@kudos.com', password: 'johndoe1', password_confirmation: 'johndoe1', admin: false,
+                                 organization_id: org.id)
+puts "#{user.attribute_for_inspect(:email)} validation failure: #{user.errors.as_json}" unless user.errors.empty?
+user = User.create(first_name: 'Jane', last_name: 'Doe', email: 'janedoe@kudos.com', password: 'janedoe1', password_confirmation: 'janedoe1', admin: false,
+                                 organization_id: org.id)
+puts "#{user.attribute_for_inspect(:email)} validation failure: #{user.errors.as_json}" unless user.errors.empty?

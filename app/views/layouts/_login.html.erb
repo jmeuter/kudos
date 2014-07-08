@@ -1,0 +1,5 @@
+<%# USERID AND LOGOUT DISPLAY START HERE WHEN NEEDED %>
+<% if defined? current_user and current_user.present? %>
+  <%= link_to current_user.email, current_user %>
+  <%= link_to 'logout', destroy_user_session_path, :method => :delete %>
+<% end %>

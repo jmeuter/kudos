@@ -1,4 +1,8 @@
 class OrganizationsController < ApplicationController
+
+  # our Devise authentication
+  before_filter :authenticate_user!
+
   # GET /organizations
   # GET /organizations.json
   def index

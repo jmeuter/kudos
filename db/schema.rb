@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140703195448) do
+ActiveRecord::Schema.define(:version => 20140707065556) do
+
+  create_table "kudos", :force => true do |t|
+    t.integer  "primary_user_id"
+    t.integer  "kudos_user_id"
+    t.text     "honor"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "kudos", ["kudos_user_id"], :name => "index_kudos_on_kudos_user_id"
+  add_index "kudos", ["primary_user_id"], :name => "index_kudos_on_primary_user_id"
 
   create_table "organizations", :force => true do |t|
     t.string   "name"
