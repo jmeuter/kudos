@@ -1,1 +1,4 @@
-<%= link_to 'Organizations', organizations_path %>
+<% if defined? current_user and current_user.present? %>
+  <%= link_to 'Organizations', organizations_path %>
+  <%= link_to 'Users', current_user %>
+<% end %>
