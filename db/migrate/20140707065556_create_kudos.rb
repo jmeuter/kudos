@@ -3,7 +3,6 @@ class CreateKudos < ActiveRecord::Migration
     create_table :kudos do |t|
       t.integer :primary_user_id
       t.integer :kudos_user_id
-      t.text :honor
 
       t.timestamps
     end

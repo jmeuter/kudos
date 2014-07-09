@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(:version => 20140707065556) do
   create_table "kudos", :force => true do |t|
     t.integer  "primary_user_id"
     t.integer  "kudos_user_id"
-    t.text     "honor"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
